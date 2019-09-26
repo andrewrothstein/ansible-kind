@@ -1,0 +1,7 @@
+---
+# vars file for kind
+kind_exe: '{{ kind_install_dir }}/kind-{{ kind_ver }}'
+kind_link: '{{ kind_install_dir }}/kind'
+kind_platform: '{{ kind_os }}-{{ kind_arch }}'
+kind_url: '{{ kind_mirror }}/{{ kind_ver }}/kind-{{ kind_platform }}'
+kind_checksum: '{{ kind_checksums[kind_ver][kind_platform] }}'
