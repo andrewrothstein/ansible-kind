@@ -1,15 +1,15 @@
 #!/usr/bin/env sh
-VER=v0.5.1
 DIR=~/Downloads
-MIRROR=https://github.com/kubernetes-sigs/kind/releases/download/${VER}
+MIRROR=https://github.com/kubernetes-sigs/kind/releases/download
 
 dl()
 {
-    local os=$1
-    local arch=$2
-    local platform=${os}-${arch}
-    local lfile=${DIR}/kind-${platform}-${VER}
-    local url=$MIRROR/kind-${platform}
+    local ver=$1
+    local os=$2
+    local arch=$3
+    local platform="${os}-${arch}"
+    local lfile=${DIR}/kind-${platform}-${ver}
+    local url=$MIRROR/$ver/kind-${platform}
 
     if [ ! -e $lfile ];
     then
@@ -20,10 +20,15 @@ dl()
     printf "    %s: sha256:%s\n" $platform $(sha256sum $lfile | awk '{print $1}')
 }
 
-printf "  %s:\n" $VER
-dl darwin amd64
-dl linux amd64
-dl linux arm
-dl linux arm64
-dl linux ppc64le
-dl windows amd64
+dl_ver() {
+    local ver=$1
+    printf "  %s:\n" $ver
+    dl $ver darwin amd64
+    dl $ver linux amd64
+    dl $ver linux arm
+    dl $ver linux arm64
+    dl $ver linux ppc64le
+    dl $ver windows amd64
+}
+
+dl_ver ${1:-v0.6.0}
