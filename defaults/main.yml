@@ -1,6 +1,6 @@
 ---
 # defaults file for kind
-kind_ver: v0.7.0
+kind_ver: v0.8.1
 kind_mirror: https://github.com/kubernetes-sigs/kind/releases/download
 kind_os: linux
 kind_arch: amd64
@@ -59,3 +59,16 @@ kind_checksums:
     linux-ppc64le: sha256:7b66040d7bcdea92264d92fdd4714906558f66cf847e43b7cc1bb946702082fa
     # https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-windows-amd64
     windows-amd64: sha256:253b7c330593f89ca904860c0da2b8b229f5515e41fd960e2b73a33d7e4c68e3
+  v0.8.1:
+    # https://github.com/kubernetes-sigs/kind/releases/download/v0.8.1/kind-darwin-amd64
+    darwin-amd64: sha256:cdd8dfe7dff764429badcd636179b0e3eb937640cfe56749dd9b8f9c048cb7db
+    # https://github.com/kubernetes-sigs/kind/releases/download/v0.8.1/kind-linux-amd64
+    linux-amd64: sha256:781c3db479b805d161b7c2c7a31896d1a504b583ebfcce8fcd49538c684d96bc
+    # https://github.com/kubernetes-sigs/kind/releases/download/v0.8.1/kind-linux-arm
+    linux-arm: sha256:9769f5bb6bc75ad73f911c12e0241ff46899a24face0449cce7e6f7be1c73c86
+    # https://github.com/kubernetes-sigs/kind/releases/download/v0.8.1/kind-linux-arm64
+    linux-arm64: sha256:b33be1df8cdd842b0b6dfa306125fbf5ada9811c3e6db840854c89a66a194f3f
+    # https://github.com/kubernetes-sigs/kind/releases/download/v0.8.1/kind-linux-ppc64le
+    linux-ppc64le: sha256:be3b7d766bf75ba0368921c73691c6028651207ef132c6435bda9ca40b5f6d00
+    # https://github.com/kubernetes-sigs/kind/releases/download/v0.8.1/kind-windows-amd64
+    windows-amd64: sha256:10d0a4adc7485a0525831b2cd67062dd75d551ec0133f09e3a7d2b2674f7efc5
