@@ -9,7 +9,7 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: downloading (( kind_url }} to {{ kind_exe }}
+- name: downloading {{ kind_url }} to {{ kind_exe }}
   become: yes
   become_user: root
   get_url:
