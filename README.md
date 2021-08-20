@@ -1,6 +1,6 @@
 andrewrothstein.kind
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-kind.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-kind)
+![Build Status](https://github.com/andrewrothstein/ansible-kind/actions/workflows/build.yml/badge.svg)
 
 Installs [kind](https://kind.sigs.k8s.io/).
 

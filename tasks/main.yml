@@ -10,7 +10,7 @@
       paths:
         - '{{ role_path }}/vars'
 - name: downloading {{ kind_url }} to {{ kind_exe }}
-  become: yes
+  become: true
   become_user: root
   get_url:
     url: '{{ kind_url }}'
@@ -18,7 +18,7 @@
     checksum: '{{ kind_checksum }}'
     mode: 0755
 - name: linking {{ kind_link }} to {{ kind_exe }}
-  become: yes
+  become: true
   become_user: root
   file:
     src: '{{ kind_exe }}'
