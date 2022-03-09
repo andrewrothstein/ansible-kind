@@ -13,7 +13,7 @@ dl()
 
     if [ ! -e $lfile ];
     then
-        wget -q -O $lfile $url
+        curl -sSLf -o $lfile $url
     fi
 
     printf "    # %s\n" $url
@@ -24,11 +24,12 @@ dl_ver() {
     local ver=$1
     printf "  %s:\n" $ver
     dl $ver darwin amd64
+    dl $ver darwin arm64
     dl $ver linux amd64
-    dl $ver linux arm
     dl $ver linux arm64
     dl $ver linux ppc64le
+    dl $ver linux s390x
     dl $ver windows amd64
 }
 
-dl_ver ${1:-v0.11.1}
+dl_ver ${1:-v0.12.0}
