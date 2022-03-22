@@ -24,3 +24,12 @@
     src: '{{ kind_exe }}'
     dest: '{{ kind_link }}'
     state: link
+- name: kind sysctl adjustments
+  when: kind_config is defined and kind_config.sysctl is defined
+  become: true
+  become_user: root
+  loop: '{{ kind_config.sysctl | dict2items }}'
+  ansible.posix.sysctl:
+    name: '{{ item.key }}'
+    value: '{{ item.value }}'
+    state: present

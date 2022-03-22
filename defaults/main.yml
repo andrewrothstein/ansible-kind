@@ -6,6 +6,11 @@ kind_os: linux
 kind_arch: amd64
 kind_install_dir: /usr/local/bin
 
+#kind_config:
+#  sysctl:
+#    fs.inotify.max_user_watches: 524288
+#    fs.inotify.max_user_instances: 512
+
 kind_checksums:
   v0.5.1:
     # https://github.com/kubernetes-sigs/kind/releases/download/v0.5.1/kind-darwin-amd64
