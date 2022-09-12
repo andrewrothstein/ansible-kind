@@ -10,6 +10,7 @@ kind_arch_map:
   aarch64: arm64
   x86_64: amd64
   ppc64le: ppc64le
+  s390x: s390x
 
 kind_install_dir: /usr/local/bin
 
