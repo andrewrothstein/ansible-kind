@@ -27,9 +27,7 @@ dl_ver() {
     dl $ver darwin arm64
     dl $ver linux amd64
     dl $ver linux arm64
-    dl $ver linux ppc64le
-    dl $ver linux s390x
     dl $ver windows amd64
 }
 
-dl_ver ${1:-v0.17.0}
+dl_ver ${1:-v0.18.0}

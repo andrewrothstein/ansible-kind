@@ -33,5 +33,3 @@ galaxy_info:
   galaxy_tags:
     - k8s
   role_name: kind
-
-dependencies: []
