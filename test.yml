@@ -1,15 +1,18 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.kind
+  hosts: all
   vars:
     kind_config:
       sysctl:
         fs.inotify.max_user_watches: 524288
         fs.inotify.max_user_instances: 512
   roles:
-  - role: '{{ playbook_dir }}'
+    - role: '{{ playbook_dir }}'
   tasks:
-  - command: /usr/local/bin/kind --version
-    register: kind_test_output
-  - name: kind --version
-    debug:
-      msg: '{{ kind_test_output.stdout }}'
+    - name: Executing 'kind --version'
+      ansible.builtin.command: /usr/local/bin/kind --version
+      changed_when: false
+      register: kind_test_output
+    - name: Output of 'kind --version'
+      ansible.builtin.debug:
+        msg: '{{ kind_test_output.stdout }}'

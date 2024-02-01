@@ -1,6 +1,6 @@
 ---
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -9,23 +9,25 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: downloading {{ kind_url }} to {{ kind_exe }}
+- name: Downloading {{ kind_url }} to {{ kind_exe }}
   become: true
   become_user: root
-  get_url:
+  ansible.builtin.get_url:
     url: '{{ kind_url }}'
     dest: '{{ kind_exe }}'
     checksum: '{{ kind_checksum }}'
-    mode: 0755
-- name: linking {{ kind_link }} to {{ kind_exe }}
+    mode: '755'
+- name: Linking {{ kind_link }} to {{ kind_exe }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ kind_exe }}'
     dest: '{{ kind_link }}'
     state: link
-- name: kind sysctl adjustments
-  when: kind_config is defined and kind_config.sysctl is defined
+- name: Sysctl adjustments for kind
+  when:
+    - kind_config is defined
+    - kind_config.sysctl is defined
   become: true
   become_user: root
   loop: '{{ kind_config.sysctl | dict2items }}'
