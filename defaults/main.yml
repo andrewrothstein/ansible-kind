@@ -1,6 +1,6 @@
 ---
 # defaults file for kind
-kind_ver: v0.22.0
+kind_ver: v0.23.0
 kind_mirror: https://github.com/kubernetes-sigs/kind/releases/download
 kind_os: linux
 
@@ -14,10 +14,10 @@ kind_arch_map:
 
 kind_install_dir: /usr/local/bin
 
-#kind_config:
-#  sysctl:
-#    fs.inotify.max_user_watches: 524288
-#    fs.inotify.max_user_instances: 512
+# kind_config:
+#   sysctl:
+#     fs.inotify.max_user_watches: 524288
+#     fs.inotify.max_user_instances: 512
 
 kind_checksums:
   v0.5.1:
@@ -269,3 +269,14 @@ kind_checksums:
     linux-arm64: sha256:4431805115da3b54290e3e976fe2db9a7e703f116177aace6735dfa1d8a4f3fe
     # https://github.com/kubernetes-sigs/kind/releases/download/v0.22.0/kind-windows-amd64
     windows-amd64: sha256:0f5f119b65968c814ed737002eb6067c67d8bed405e671ae566076138152a241
+  v0.23.0:
+    # https://github.com/kubernetes-sigs/kind/releases/download/v0.23.0/kind-darwin-amd64
+    darwin-amd64: sha256:81c77f104b4b668812f7930659dc01ad88fa4d1cfc56900863eacdfb2731c457
+    # https://github.com/kubernetes-sigs/kind/releases/download/v0.23.0/kind-darwin-arm64
+    darwin-arm64: sha256:68ec87c1e1ea2a708df883f4b94091150d19552d7b344e80ca59f449b301c2a0
+    # https://github.com/kubernetes-sigs/kind/releases/download/v0.23.0/kind-linux-amd64
+    linux-amd64: sha256:1d86e3069ffbe3da9f1a918618aecbc778e00c75f838882d0dfa2d363bc4a68c
+    # https://github.com/kubernetes-sigs/kind/releases/download/v0.23.0/kind-linux-arm64
+    linux-arm64: sha256:a416d6c311882337f0e56910e4a2e1f8c106ec70c22cbf0ac1dd8f33c1e284fe
+    # https://github.com/kubernetes-sigs/kind/releases/download/v0.23.0/kind-windows-amd64
+    windows-amd64: sha256:d1a8c78ca55227720c49dadc4635c8f9908d1dee9dabe42f703537f32efe9aea
