@@ -1,6 +1,6 @@
 ---
 # vars file for kind
-kind_arch: '{{ kind_arch_map[ansible_architecture] }}'
+kind_arch: '{{ kind_arch_map[ansible_facts["architecture"]] }}'
 kind_exe: '{{ kind_install_dir }}/kind-{{ kind_platform }}-{{ kind_ver }}'
 kind_link: '{{ kind_install_dir }}/kind'
 kind_platform: '{{ kind_os }}-{{ kind_arch }}'
